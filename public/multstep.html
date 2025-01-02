@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="multstep.css"> 
+    <title>HUNCHO JOB APPLICATION</title>
+</head>
+<body>
+    <form id="myform" action="#" method="post">
+      <section class="section active" id="one">
+    <div class="form-group">
+     <div class="form-control">
+        <label for="name"> Name <span style="color: red;">*</span></label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        <div class="error" id="nameError"> </div>
+     </div>
+
+     <div class="form-control">
+        <label for="IDNum"> ID Number <span style="color: red;">*</span></label>
+        <input type="number" name="IDNum" id="IDNum" placeholder="Enter ID number" required>
+        <div class="error" id="IDNumError"> </div>
+     </div>
+
+     <div class="form-group"> <div class="form-control">
+        <label for="email"> Email <span style="color: red;">*</span></label>
+        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+        <div class="error" id="emailError"> </div>
+    </div> </div>
+       
+
+        <div class="form-control">
+            <label for="Date of birth "> Date Of Birth <span style="color: red;">*</span></label>
+            <input type="date" name="Date of birth" id="Date of birth" min="1996-02-01" max="2004-09-25" required>
+            <div class="error" id="Date of birthError"> </div>
+        </div>
+
+
+
+    </section> 
+    
+    <section>
+        <div class="group-two" id="two">
+            <div class="form-control">
+                <label for="Document">UP load CV <span style="color: red;">*</span></label>
+                <input type="file" name="Document" id="Document" required>
+            </div>
+
+            <div class="form-control">
+                <label for="deparment"> Deparment <span style="color: red;">*</span></label>
+                <select name="deparment" id="deparment">
+                    <option value=" "> DEPARTMENT</option>
+                    <option value="pol sci"> POLITICAL SCIENCE </option>
+                    <option value=" EHR"> HUMAN RESOURCE MANAGEMENT</option>
+                    <option value="pol eco"> POLITICAL ECONOMY</option>
+                    <option value="pub adm">PUBLIC ADIMINISTRATION</option>
+                </select>
+            </div>
+    </section >
+
+    <section class="group-three" id="three">
+        <div class="form-control">
+            <label for="skill">Skills (opt)</label>
+            <textarea type="skill" name="skill" id="skill" rows="4" placeholder="Enter your skills "> </textarea>
+        </div>
+
+        <div class="form-control">
+            <label for="job"> Job Experince (opt)</label>
+            <textarea type="job" name="job" id="job" rows="4" placeholder="Job Experince"> </textarea>
+        </div>
+
+        <div class="form-control">
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms"> I agree to the terms and condition <span style="color: red;">*</span></label>
+        </div>
+    <button id="btn"  onclick="validateSection()" type="submit">Comfire and submit</button>
+    </section>
+
+    <div class="arrows">
+        <button type="button" id="navLeft">Previous</button>
+        <span id="stepInfo"></span>
+        <button type="button" id="navRight" onclick="validateSection(1,2)">Next</button>
+        
+    </div>
+    </form>
+
+    <script src="multstep.js"></script>
+</body>
+</html>

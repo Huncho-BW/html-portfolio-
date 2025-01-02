@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alien Blog</title>
+	 <link href="../public/myblog.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="leftheader">
+				<a href="/"><img src="../assest/image/galaxy.jpg" alt="Zorgblag's Blog. Click for home. "></a>
+			</div>
+			<div class="rightheader">
+				<h1>Zorgblag's Blog</h1>
+				<p class="pos">My So-Called Light-Speed Life</p>
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li  class="child-flex" ><a href="#">Home</a></li>
+				<li class="child-flex"><a href="#">Posts</a></li>
+				<li class="child-flex"><a href="#">Death Ray</a></li>
+				<li class="child-flex"><a href="#">About</a></li>
+				<li class="child-flex"><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<section>
+			<article1>
+				<img class="float-lefth" src="../assest/image/hun.png" alt="Earth-Vision Reality TV. ">
+				<h2 class="sub">Why I still Watch Earth-Vision Reality TV</h2>
+				<p class="posted">Posted October 15, 2018</p>
+				<p class="posted">Lots of my Alien friends have moved on from Earth-Vision Reality TV. I hear the same complaints all the time - its too repetitive, there aren’t enough abductions, our plants in high level governments are too obvious. Blah-blah-blah. You know what I say? They are just setting the stage for the next big chapter, and I can’t wait...</p>
+				<p><a class="posted" href="blog1.html">Read more >> </a></p>
+			</article1>
+			<article2>
+				<img class="float-lefth" src="../assest/image/hun.png" alt="Proper UFO Maintenance. ">
+				<h2 class="sub">Proper UFO Maintenance</h2>
+				<p class="posted">Posted October 5, 2018</p>
+				<p class="posted">Flying around the galaxy is all well and good, but if you’ve ever found yourself stranded in the middle of an anti-matter cloud for a few millennia, you’ll start wishing you had cared better for your UFO. Here are my top tricks to keep yourself at light speed.</p>
+				<p><a class="posted" href="blog2.html">Read more >> </a></p>
+			</article2>
+		</section>
+		<footer>
+			<p class="null"> </p>
+			<p class="cen">Legal disclaimer, copyright, etc.</p>
+			<ul class="inline">
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+				<li><a href="#"><img src="../assest/image/cat.jpg" alt="cat"></a></li>
+			</ul>
+		</footer>
+	</div>
+
+<input type="file">
+
+Notes: <select></select> <button>Add</button><br>
+<textarea style="width: 50%;"></textarea>
+
+<script>
+sessionStorage.setItem("username", "HUNCHO")
+console.log(sessionStorage.getItem("username"));
+
+let list = document.querySelector("select")
+let note = document.querySelector("textarea")
+
+let state;
+function setState(newState){
+	list.textContent = ""
+	for(let name of Object.keys(newState.notes)){
+		let option = document.createElement("option")
+		option.textContent = name;
+		if(newState.selected == name) option.selected = true
+		list.appendChild(option)
+	}
+	note.value = newState.notes[newState.selected]
+    localStorage.setItem("notes", JSON.stringify(newState))
+	state = newState	
+    
+}
+
+setState(JSON.parse(localStorage.getItem("Notes")) || {
+	notes:{
+		"click add to create new note": "new note"
+	}, selected: "shopping mail list"
+})
+
+list.addEventListener("change", ()=> {
+
+	setState({notes: state.notes, selected: list.value})
+}) 
+note.addEventListener("change", () => {
+	setState({
+		notes: Object.assign({}, state.notes,{[state.selected]: note.value}), selected: state.selected
+	})
+})
+
+document.querySelector("button"),addEventListener("click", ()=> {
+let name = prompt("Note name")
+if (name) setState({
+notes: Object.assign({}, state.notes, {[name]: ""}), selected: name
+})
+});
+
+
+</script>
+
+
+</body>
+</html>

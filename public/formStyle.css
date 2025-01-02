@@ -1,0 +1,82 @@
+
+html{
+  box-sizing: border-box;
+  background-image: url(../assest/image/galaxy.jpg);
+
+}
+*, *:before,*:after {
+    box-sizing:border-box;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: chartreuse;
+    
+    
+}
+
+h1{
+    text-decoration-line: underline;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger; 
+}
+section{
+    
+    
+    margin-right: 3rem;
+    
+    
+    
+}
+
+option{
+font-size: larger;
+}
+select{
+font-size: larger;
+}
+
+textarea{
+    height: 10rem;
+    font-size: larger;
+}
+button:hover{
+    background-color: black;
+    color: teal;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: larger;
+
+}
+
+aside{
+margin-top: 2rem;
+margin-left: 2rem;
+font-size: larger;
+
+
+
+}
+
+
+
+    fieldset{
+        margin: 2rem;
+        display: flex;
+        flex-flow:column nowrap; 
+        margin-top: 2rem;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    legend{
+        font-size: larger;
+    }
+
+   
